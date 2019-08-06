@@ -1,0 +1,48 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <h1>
+        Login Page
+    </h1>
+    <mat-card>
+        <div class="Email" fxLayout=column fxLayoutAlign="center center">
+
+            <mat-form-field appearance="outline" fxFlex="150">
+                <mat-label>Enter Your Email</mat-label>
+                <input matInput placeholder="Email" name="email" type="text" [(ngModel)]="login.email"
+                    [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
+                <mat-icon matSuffix><img src="../../../assets/email.svg"></mat-icon>
+            </mat-form-field>
+
+        </div>
+
+        <div class="Password" fxLayout=column fxLayoutAlign="center center">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your password</mat-label>
+                <input matInput placeholder="password" name="password" type="password" [(ngModel)]="login.password"
+                    [formControl]="password" required>
+                <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
+
+                <mat-icon matSuffix><img src="../../../assets/eye.svg"></mat-icon>
+
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap='20px'>
+            <div class="ancherAccount">
+                <a mat-button routerLink="/register">Create Account?</a>
+            </div>
+
+            <div class="LoginBotton">
+                <button mat-raised-button color="primary" (click)="loginSubmit()">login</button>
+            </div>
+
+            <div class="ancherForget">
+                <a mat-button routerLink="/forget">Forget Password?</a>
+
+
+
+            </div>
+
+        </div>
+    </mat-card>
+</div>

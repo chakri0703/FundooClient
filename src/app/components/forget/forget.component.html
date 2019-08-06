@@ -1,0 +1,30 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <link rel="stylesheet/text" href="./forget.component.scss">
+<h1>
+    Forget Password
+</h1>
+<mat-card>
+    <div class="Email" fxLayout=column fxLayoutAlign="center center">
+
+        <mat-form-field appearance="outline" fxFlex="150">
+            <mat-label>Enter Your Email</mat-label>
+            <input matInput placeholder="Email" type="text" [(ngModel)]="forget.email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
+            <mat-icon matSuffix><img src="../../../assets/email.svg"></mat-icon>
+
+        </mat-form-field>
+
+
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap='20px'>
+
+        <div class="VerifyButton">
+            <button mat-flat-button color="primary" (click)="forgetSubmit()">Verify </button>
+        </div>
+
+
+
+    </div>
+   
+</mat-card>
+</div>

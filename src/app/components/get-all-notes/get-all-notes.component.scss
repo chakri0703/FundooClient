@@ -1,0 +1,23 @@
+.mat-card {
+    min-height: 15vh;
+    min-width: 15vw;
+    margin-left: 02vw;
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    word-wrap: wrap;
+    word-break: break-all;
+    box-shadow: 1px 1px 5px 1px #9b9999;
+    border-radius: 10px;
+  }
+  
+  mat-card:hover {
+    .icon {
+      visibility: visible;
+    }
+  }
+  .icon {
+    visibility: hidden;
+   
+  }
+  

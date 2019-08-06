@@ -1,0 +1,74 @@
+<div fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex="layout-wrap" fxFlex="100%">
+    <mat-card fxFlex="layout-wrap" style="margin-top: 5vh">
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="show">
+            <input matInput placeholder="Title" [(ngModel)]="note.title">
+
+        </div>
+        <div (click)="toggle()">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+
+                <textarea type="text" placeholder="Take a note...." fxLayoutAlign="center center"
+                    [(ngModel)]="note.description"></textarea>
+                <div *ngIf="!show" fxLayout="row">
+                    <button matTooltip="add image" mat-icon-button>
+                        <mat-icon> insert_photo</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="paint">
+                        <mat-icon>brush</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="show" fxLayout="row">
+            <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                <button mat-icon-button matTooltip="reminder">
+                    <mat-icon>notifications_none</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="collaborator">
+                    <mat-icon>person_add</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="add image"> 
+                    <mat-icon> insert_photo</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="change color"> 
+                    <mat-icon>color_lens</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="archive">
+                    <mat-icon>archive</mat-icon>
+                </button>
+            </div>
+            <div fxFlex="5%"></div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="more">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+
+                    <span>Add Label</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Add Drawing</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Show tick boxes</span>
+                </button>
+            </mat-menu>
+            <div fxFlex="5%"></div>
+            <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                <button mat-icon-button matTooltip="undo">
+                    <mat-icon>undo</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="redo">
+                    <mat-icon>redo</mat-icon>
+                </button>
+            </div>
+            <div fxFlex="13%"></div>
+            <button mat-icon-button (click)="close()">close</button>
+        </div>
+    </mat-card>
+
+
+</div>

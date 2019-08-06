@@ -1,0 +1,68 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <h1>
+        Registeration Page
+    </h1>
+    <mat-card>
+
+
+        <div fxLayout=column fxLayoutAlign="center center">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your Name</mat-label>
+
+                <input matInput placeholder="Enter your Name" [(ngModel)]="register.name" [formControl]="name" required>
+                <mat-error *ngIf="name.invalid">{{getErrorNameMessage()}}</mat-error>
+
+            </mat-form-field>
+        </div>
+        <div fxLayout=column fxLayoutAlign="center center">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your Email</mat-label>
+
+                <input matInput placeholder="Enter your email" [(ngModel)]="register.email" [formControl]="email">
+                <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
+
+                <mat-icon matSuffix><img src="../../../assets/email.svg"></mat-icon>
+
+            </mat-form-field>
+        </div>
+        <div fxLayout=column fxLayoutAlign="center center">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Your Password</mat-label>
+                <input matInput placeholder="Password" [type]="hide ? 'text' : 'password' " [(ngModel)]="register.password" [formControl]="password" required>
+
+                <!-- <input matInput placeholder="Enter your Password" [type]="passwordType" [(ngModel)]="register.password"
+                    [formControl]="password"> -->
+                <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
+
+                <mat-icon matSuffix (click)="hide = !hide"><img src="../../../assets/eye.svg"></mat-icon>
+
+            </mat-form-field>
+        </div>
+        <div fxLayout=column fxLayoutAlign="center center">
+            <mat-form-field appearance="outline">
+
+
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Re-Enter Password" [type]="hide ? 'text' : 'password' " [(ngModel)]="register.confirmPassword" [formControl]="confirmPassword" required>
+
+                <!-- <input matInput placeholder="" type="password" [(ngModel)]=""
+                    [formControl]=""> -->
+                <mat-error *ngIf="confirmPassword.invalid">{{getErrorConfirmPasswordMessage()}}</mat-error>
+
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap='20px'>
+            <div class="ancherAccount">
+                <a mat-button routerLink="/login">Already have Account?</a>
+            </div>
+
+            <div class="nextButton">
+                <button mat-raised-button color="red" (click)="registerSubmit()">verify</button>
+            </div>
+
+
+        </div>
+    </mat-card>
+
+
+</div>

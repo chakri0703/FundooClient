@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="center center " fxFlex="layout-wrap" fxFlex="100%" style="margin-top: 5vh;">
+    <div fxFlex="80%" fxLayout="row wrap" fxLayoutAlign="start start">
+        <div fxFlex="30%" fxLayout="row" *ngFor="let note of allNotes">
+            <mat-card fxFlex="layout-wrap" style=" margin-left:2vh; margin-right: 2vh">
+                <mat-card-title>{{note.title}}</mat-card-title>
+                <p>
+                    {{note.description}}
+                </p>
+                <div fxLayout="row" class="icon">
+                       
+                        <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="more">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="delete(note)">
+                
+                                    <span>Delete note</span>
+                                </button>
+                                <button mat-menu-item (click)="restore(note)">
+                
+                                    <span>Restore</span>
+                                </button>
+                                
+                            </mat-menu>
+                </div>
+            </mat-card>
+        </div>
+       
+    </div>
+</div>

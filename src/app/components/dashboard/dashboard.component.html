@@ -1,0 +1,119 @@
+<div style="height: 100vh;">
+    <mat-toolbar color="#ffffff">
+        <mat-toolbar-row fxFlex.xs="25%">
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                </div>
+                <div>
+                    <span style="margin:20%">FundooApp</span>
+                </div>
+            </div>
+            <div>
+                <mat-card fxLayoutAlign="start center" class="searchInput">
+                    <button mat-icon-button class="searchButton">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <input mat-input class="searchInput" placeholder="Search">
+                </mat-card>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-around center" class="icon">
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button mat-icon-button matTooltip="refresh">
+                        <mat-icon>refresh</mat-icon>
+                    </button>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button mat-icon-button matTooltip="list view">
+                        <mat-icon>view_agenda</mat-icon>
+                    </button>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button mat-icon-button matTooltip="setting">
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button mat-icon-button matToolTip="apps">
+                        <mat-icon>apps</mat-icon>
+                    </button>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button mat-button [matMenuTriggerFor]="menu" class="menu">
+                        <mat-icon>account_circle</mat-icon>
+                        <mat-menu #menu="matMenu">
+                            <button mat-flat-button routerLink="/login" (click)="signOut()">SignOut</button>
+                            <button mat-flat-button routerLink="/register">Add Account</button>
+                        </mat-menu>
+                    </button>
+                </div>
+            </div>
+
+
+
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+   
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #sidenav class="example-sidenav" mode="side">
+            <div fxLayout="column" fxLayoutAlign="start" fxFlex="100" class="sideNav">
+                <div><button mat-button style="width:100%" routerLink="/dashboard/getAllNotes">
+                        <mat-icon>lightbulb_outline</mat-icon>
+                        <span style="margin:28%" role="listitem"> Note</span>
+                    </button>
+                </div>
+
+                <div>
+                    <button mat-button style="width:100%" routerLink="/dashboard/reminders">
+                        <mat-icon>notifications</mat-icon>
+                        <span style="margin:20%"> Reminders</span>
+                    </button>
+                </div>
+                <div>
+                    <mat-divider class="divider"></mat-divider>
+                </div>
+                <span class="name">LABELS</span>
+                <div>
+
+                    <button mat-button style="width:100%" routerLink="/dashboard/login">
+                        <mat-icon>label</mat-icon >
+                        <span style="margin:20%"> Edit Labels</span>
+                    </button>
+                </div>
+
+                <div>
+                    <mat-divider class="divider"></mat-divider>
+                    <button mat-button style="width:100%" routerLink="/dashboard/archive">
+                        <mat-icon>archive</mat-icon>
+                        <span style="margin:27%">Archive</span>
+                    </button>
+                </div>
+
+                <div>
+                    <button mat-button style="width:100%" routerLink="/dashboard/trash">
+                        <mat-icon>delete</mat-icon>
+                        <span style="margin:30%">Trash</span>
+                    </button>
+                </div>
+            </div>
+        </mat-drawer>
+
+        
+
+        <app-note></app-note>
+        <!-- <app-getallnotes></app-getallnotes> -->
+        
+        <router-outlet></router-outlet>
+
+    </mat-drawer-container>
+
+
+</div> 
+
+
