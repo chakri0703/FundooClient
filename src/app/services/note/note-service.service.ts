@@ -29,4 +29,11 @@ export class NoteServiceService {
   restore(note){
     return this.http.post('restore',note);
   }
+  archive(note){
+    return this.http.post('archive',note);
+
+  }
+  getAllArchive(){
+    return this.http.get('getAllArchive');
+  }
 }

@@ -41,38 +41,38 @@ export class GetallnotesComponent implements OnInit {
 
 
   
-  // archive(note){
-  //   // console.log(note);
+  archive(note){
+    // console.log(note);
     
-  //   let noteData={
-  //     "title":note.title,
-  //     "description":note.description
-  //   }
-  //   console.log(noteData);
+    let noteData={
+      "title":note.title,
+      "description":note.description
+    }
+    console.log(noteData);
     
-  //   this.getNotes.archive(noteData).subscribe(
-  //     (response:any)=>{
-  //       console.log(response);
-  //       this.snackbar.open("note Archived","end now",{duration:3000})
-  //     },
-  //     error=>{
-  //       console.log(error);
-  //       this.snackbar.open("not possible ","end now",{duration:3000})
-  //       this.getNotes.getAllNotes().subscribe(
-  //         (response: any) => {
-  //           console.log('data check ===>', response);
-  //           localStorage.setItem('notes', JSON.stringify(response))
+    this.noteService.archive(noteData).subscribe(
+      (response:any)=>{
+        console.log(response);
+        this.snackbar.open("note Archived","end now",{duration:3000})
+      },
+      error=>{
+        console.log(error);
+        this.snackbar.open("not possible ","end now",{duration:3000})
+        this.noteService.getAllNotes().subscribe(
+          (response: any) => {
+            console.log('data check ===>', response);
+            localStorage.setItem('notes', JSON.stringify(response))
     
-  //         },
-  //         error => {
-  //           console.log("error ", error);
+          },
+          error => {
+            console.log("error ", error);
     
-  //         }
-  //       )
-  //     }
-  //   )
+          }
+        )
+      }
+    )
 
-  // }
+  }
   delete(note){
     // console.log(note);
   

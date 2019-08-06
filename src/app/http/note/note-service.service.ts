@@ -47,18 +47,6 @@ export class HttpService {
     console.log(response);
     return response;
   }
-  // delete(url,note){
 
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'token': localStorage.getItem('token')
-  //     })
-  //   }
-
-  //   let response=this.httpClient.delete(this.baseUrl+url,note,httpOptions);   
-  //   console.log("response in http ======>",response);
-  //   return response;
-    
-  // }
   
 }
