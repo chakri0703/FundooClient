@@ -33,6 +33,9 @@ export class NoteServiceService {
     return this.http.post('archive',note);
 
   }
+  unarchive(note){
+    return this.http.post('unarchive',note);
+  }
   getAllArchive(){
     return this.http.get('getAllArchive');
   }

@@ -12,6 +12,7 @@ import { TrashComponent } from './components/trash/trash.component';
 import { ReminderComponent } from './components/reminder/reminder.component';
 import { DashBoardComponent } from './components/dashboard/dashboard.component';
 import { GetallnotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { LabelComponent } from './components/label/label.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Route[] = [
       { path: 'getAllNotes', component: GetallnotesComponent },
       { path: 'trash', component: TrashComponent },
       {path:'reminders',component:ReminderComponent},
+      {path:'label',component:LabelComponent}
     ]
   },
 

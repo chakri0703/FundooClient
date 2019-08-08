@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatIconModule, MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -28,6 +28,7 @@ import { DashBoardComponent } from './components/dashboard/dashboard.component';
 import { GetallnotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { NoteComponent } from './components/note/note.component';
 import { Note } from './core/models/note/note';
+import { LabelComponent } from './components/label/label.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { Note } from './core/models/note/note';
     TrashComponent,
     ArchiveComponent,
     NoteComponent,
-    
+    LabelComponent,
+
 
   ],
   imports: [
@@ -69,13 +71,15 @@ import { Note } from './core/models/note/note';
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,
     // Note,
+  
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
