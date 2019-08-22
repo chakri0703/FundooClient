@@ -1,0 +1,79 @@
+<mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+            <input matInput placeholder="Title...">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+
+            <input matInput placeholder="Note...">
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <span fxLayout="row" fxLayoutAlign="space-around center">
+            <button mat-icon-button matTooltip="Add Reminder">
+                <mat-icon>notifications_none</mat-icon>
+            </button>
+
+            <button mat-icon-button matTooltip="collaborator">
+                <mat-icon>person_add</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Add Image">
+                <mat-icon> insert_photo</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Change Colour">
+                <mat-icon>color_lens</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Archive">
+                <mat-icon>archive</mat-icon>
+            </button>
+
+            <span fxFlex="1px"></span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="more">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="delete(note)">
+
+                    <span>Delete note</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Add label</span>
+                </button>
+                <button mat-menu-item>
+
+                    
+                    <span>Add drawing</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Make a copy</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Show tick boxes</span>
+                </button>
+                <button mat-menu-item>
+
+                    <span>Copy to Google Docs</span>
+                </button>
+            </mat-menu>
+        </span>
+        <span fxFlex="1px"></span>
+        <span fxLayout="row" fxLayoutAlign="space-around center">
+            <button mat-icon-button matTooltip="undo">
+                <mat-icon>undo</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="redo">
+                <mat-icon>redo</mat-icon>
+            </button>
+        </span>
+
+        <span fxFlex="3px"></span>
+        <span fxLayout="row" fxLayoutAlign="space-around center">
+            <button mat-icon-button>close</button>
+        </span>
+
+    </div>
+</mat-dialog-content>

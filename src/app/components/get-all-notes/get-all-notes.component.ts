@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/services/note/note-service.service';
-
+// import { EditNoteComponent } from '../edit-note/edit-note.component';
+import { Component, OnInit, Inject } from '@angular/core';
+// import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import {MatDialog } from '@angular/material';
+import { OpendialogComponent } from '../opendialog/opendialog.component';
 @Component({
   selector: 'app-getallnotes',
   templateUrl: './get-all-notes.component.html',
   styleUrls: ['./get-all-notes.component.scss']
 })
 export class GetallnotesComponent implements OnInit {
+  // dialog: any;
 
   constructor(
-    
+    public dialog:MatDialog,
     private snackbar: MatSnackBar,
     private noteService: NoteServiceService,
     
@@ -38,6 +42,19 @@ export class GetallnotesComponent implements OnInit {
   }
   allNotes: any = JSON.parse(localStorage.getItem('notes'));
   
+  // openDialog(note): void {
+  //   console.log("dialouge box", this.allNotes);
+    
+  //   const dialogRef = this.dialog.open(EditNoteComponent, { panelClass:'myapp-no-padding-dialog',
+  //   // width: '50%',height:'25%',
+  //   data: { name: note }
+  //   });
+    
+  //   dialogRef.afterClosed().subscribe(result => {
+  //   console.log('The dialog was closed');
+  //   console.log("dialougebox result", result);
+  //   });
+  //   }
 
 
   
@@ -93,4 +110,14 @@ export class GetallnotesComponent implements OnInit {
         }
       )
   }
+  openDialog(){
+    let dialogRef= this.dialog.open(OpendialogComponent,{data:{name:"chakri"}}
+    )
+    
+  
+    dialogRef.afterClosed().subscribe(result=>{
+      console.log("result",result);
+      
+    })
+}
 }

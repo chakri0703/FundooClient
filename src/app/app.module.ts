@@ -29,6 +29,7 @@ import { GetallnotesComponent } from './components/get-all-notes/get-all-notes.c
 import { NoteComponent } from './components/note/note.component';
 import { Note } from './core/models/note/note';
 import { LabelComponent } from './components/label/label.component';
+import { OpendialogComponent } from './components/opendialog/opendialog.component';
 
 
 @NgModule({
@@ -46,9 +47,11 @@ import { LabelComponent } from './components/label/label.component';
     ArchiveComponent,
     NoteComponent,
     LabelComponent,
+    OpendialogComponent,
 
 
   ],
+  entryComponents:[OpendialogComponent],
   imports: [
 
     BrowserModule,

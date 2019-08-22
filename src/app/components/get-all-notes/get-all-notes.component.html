@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center center " fxFlex="layout-wrap" fxFlex="100%" style="margin-top: 5vh">
     <div fxFlex="80%" fxLayout="row wrap" fxLayoutAlign="start start">
         <div fxFlex="33%" fxLayout="row" *ngFor="let note of allNotes">
-            <mat-card fxFlex="layout-wrap">
+            <mat-card fxFlex="layout-wrap" (click)="openDialog()">
                 <mat-card-title>{{note.title}}</mat-card-title>
                 <p>
                     {{note.description}}
