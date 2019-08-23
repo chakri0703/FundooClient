@@ -39,4 +39,7 @@ export class NoteServiceService {
   getAllArchive(){
     return this.http.get('getAllArchive');
   }
+  updateNote(note){
+    return this.http.post('updateNote',note);
+  }
 }

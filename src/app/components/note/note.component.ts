@@ -39,7 +39,7 @@ export class NoteComponent implements OnInit {
   close(){
     this.addNote()
     this.show = !this.show;
-
+    
   }
 
   addNote() {

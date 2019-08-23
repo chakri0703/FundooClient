@@ -2,11 +2,11 @@
     <div fxLayout="column" fxLayoutAlign="space-around center">
 
         <div fxLayout="row" fxLayoutAlign="space-around center">
-            <input matInput placeholder="Title...">
+            <input matInput placeholder="Title..."[(ngModel)]="this.data.title">
         </div>
         <div fxLayout="row" fxLayoutAlign="space-around center">
 
-            <input matInput placeholder="Note...">
+            <input matInput placeholder="Note..." [(ngModel)]="this.data.description">
         </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-around center">
@@ -72,7 +72,7 @@
 
         <span fxFlex="3px"></span>
         <span fxLayout="row" fxLayoutAlign="space-around center">
-            <button mat-icon-button>close</button>
+            <button mat-icon-button (click)="update()">close</button>
         </span>
 
     </div>

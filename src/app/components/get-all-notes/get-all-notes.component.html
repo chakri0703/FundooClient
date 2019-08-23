@@ -1,61 +1,63 @@
 <div fxLayout="row" fxLayoutAlign="center center " fxFlex="layout-wrap" fxFlex="100%" style="margin-top: 5vh">
     <div fxFlex="80%" fxLayout="row wrap" fxLayoutAlign="start start">
         <div fxFlex="33%" fxLayout="row" *ngFor="let note of allNotes">
-            <mat-card fxFlex="layout-wrap" (click)="openDialog()">
-                <mat-card-title>{{note.title}}</mat-card-title>
-                <p>
-                    {{note.description}}
-                </p>
+            <mat-card fxFlex="layout-wrap" >
+                <div (click)="openDialog(note)" style="min-height: 25px">
+                    <mat-card-title>{{note.title}}</mat-card-title>
+                    <p>
+                        {{note.description}}
+                    </p>
+                </div>
                 <div fxLayout="row" class="icon">
-                        <div fxLayout="row" fxLayoutAlign="space-evenly center">
-                            <button mat-icon-button (click)="reminder(note)" matTooltip="Add Reminder" >
-                                <mat-icon>notifications_none</mat-icon>
-                            </button>
-                            <button mat-icon-button matTooltip="collaborator">
-                                <mat-icon>person_add</mat-icon>
-                            </button>
-                            <button mat-icon-button matTooltip="Add Image">
-                                <mat-icon > insert_photo</mat-icon>
-                            </button>
-                            <button mat-icon-button matTooltip="Change Colour">
-                                <mat-icon>color_lens</mat-icon>
-                            </button>
-                            <button mat-icon-button (click)="archive(note)" matTooltip="Archive">
-                                <mat-icon>archive</mat-icon>
-                            </button>
-                        </div>
-                        <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="more">
-                                <mat-icon>more_vert</mat-icon>
-                            </button>
-                            <mat-menu #menu="matMenu">
-                                <button mat-menu-item (click)="delete(note)">
-                
-                                    <span>Delete note</span>
-                                </button>
-                                <button mat-menu-item>
-                
-                                    <span>Add label</span>
-                                </button>
-                                <button mat-menu-item>
-                
-                                    <span>Add drawing</span>
-                                </button>
-                                <button mat-menu-item>
-                
-                                    <span>Make a copy</span>
-                                </button>
-                                <button mat-menu-item>
-                
-                                    <span>Show tick boxes</span>
-                                </button>
-                                <button mat-menu-item>
-                
-                                    <span>Copy to Google Docs</span>
-                                </button>
-                            </mat-menu>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                        <button mat-icon-button (click)="reminder(note)" matTooltip="Add Reminder">
+                            <mat-icon>notifications_none</mat-icon>
+                        </button>
+                        <button mat-icon-button matTooltip="collaborator">
+                            <mat-icon>person_add</mat-icon>
+                        </button>
+                        <button mat-icon-button matTooltip="Add Image">
+                            <mat-icon> insert_photo</mat-icon>
+                        </button>
+                        <button mat-icon-button matTooltip="Change Colour">
+                            <mat-icon>color_lens</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="archive(note)" matTooltip="Archive">
+                            <mat-icon>archive</mat-icon>
+                        </button>
+                    </div>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="more">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="delete(note)">
+
+                            <span>Delete note</span>
+                        </button>
+                        <button mat-menu-item>
+
+                            <span>Add label</span>
+                        </button>
+                        <button mat-menu-item>
+
+                            <span>Add drawing</span>
+                        </button>
+                        <button mat-menu-item>
+
+                            <span>Make a copy</span>
+                        </button>
+                        <button mat-menu-item>
+
+                            <span>Show tick boxes</span>
+                        </button>
+                        <button mat-menu-item>
+
+                            <span>Copy to Google Docs</span>
+                        </button>
+                    </mat-menu>
                 </div>
             </mat-card>
         </div>
-       
+
     </div>
 </div>

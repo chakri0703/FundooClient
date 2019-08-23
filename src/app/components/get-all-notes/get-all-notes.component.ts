@@ -110,14 +110,24 @@ export class GetallnotesComponent implements OnInit {
         }
       )
   }
-  openDialog(){
-    let dialogRef= this.dialog.open(OpendialogComponent,{data:{name:"chakri"}}
+  openDialog(note){
+    let dialogRef= this.dialog.open(OpendialogComponent,{data:note}
     )
     
   
     dialogRef.afterClosed().subscribe(result=>{
-      console.log("result",result);
+      console.log("result",note);
       
+      this.noteService.updateNote(note).subscribe(
+        (response:any)=>{
+          console.log("response from api===>",response);
+          this.snackbar.open("update sucessfull","end now",{duration:3000});
+        },
+        error=>{
+          console.log("error ==>",error);
+          this.snackbar.open("update failed","end now",{duration:3000});
+        }
+      )
     })
 }
 }
